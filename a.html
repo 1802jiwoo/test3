@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>과제</title>
+</head>
+<body>
+    <h1>컬러표시</h1>
+    <h3>아래 버튼을 누르시오</h3>
+    <button>컬러 바꾸기</button>
+
+    <script>
+    const button = document.querySelector('button');
+    const h1 = document.querySelector('h1');
+
+    button.addEventListener('click', function () {
+        const newColor = makeRandColor();
+        document.body.style.backgroundColor = newColor;
+        h1.innerText = newColor;
+    })
+
+    const makeRandColor = () => {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    </script>
+</body>
+</html>
